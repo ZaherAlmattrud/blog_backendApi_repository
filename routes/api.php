@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\AccessControll\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,19 @@ Route::post('/signin', [AuthenticationController::class, 'signin']);
 
 //using middleware
 Route::group(['middleware' => ['auth:sanctum']], function () {
-    
+
     Route::get('/profile', function(Request $request) {
         return auth()->user();
     });
-    Route::post('/sign-out', [AuthenticationController::class, 'logout']);
+
+    
+    Route::post('/sign-out', [AuthenticationController::class, 'signout']);
+
+    //Access Controll
+
+    Route::resource('role',RoleController::class);
+
+    //
+
+
 });

@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "c80a3aa5-ec5c-4450-878e-81bb5405ff42",
+		"name": "Project Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "New account (user)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user@user.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LocalUrl}}/api/create-account",
+							"host": [
+								"{{LocalUrl}}"
+							],
+							"path": [
+								"api",
+								"create-account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignIn (login)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user@user.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LocalUrl}}/api/signin",
+							"host": [
+								"{{LocalUrl}}"
+							],
+							"path": [
+								"api",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signout (logout)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token\n}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LocalUrl}}/api/sign-out",
+							"host": [
+								"{{LocalUrl}}"
+							],
+							"path": [
+								"api",
+								"sign-out"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "AccessControll",
+					"item": [
+						{
+							"name": "New Role",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token\n}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{LocalUrl}}/api/role",
+									"host": [
+										"{{LocalUrl}}"
+									],
+									"path": [
+										"api",
+										"role"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Site",
+			"item": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "LocalUrl",
+			"value": "http://localhost:8000"
+		},
+		{
+			"key": "Token\n",
+			"value": "md08jQhm1HfaTVGWI1XTOZfSOKFhL4sd5SwGd57c"
+		}
+	]
+}
