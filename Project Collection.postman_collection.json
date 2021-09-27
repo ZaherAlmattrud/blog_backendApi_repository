@@ -178,7 +178,184 @@
 		},
 		{
 			"name": "Site",
-			"item": []
+			"item": [
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Store Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token\n}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "new category 2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{LocalUrl}}/api/category",
+									"host": [
+										"{{LocalUrl}}"
+									],
+									"path": [
+										"api",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token\n}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{LocalUrl}}/api/category/8",
+									"host": [
+										"{{LocalUrl}}"
+									],
+									"path": [
+										"api",
+										"category",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token\n}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "update test2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{LocalUrl}}/api/category/8?_method=PATCH",
+									"host": [
+										"{{LocalUrl}}"
+									],
+									"path": [
+										"api",
+										"category",
+										"8"
+									],
+									"query": [
+										{
+											"key": "_method",
+											"value": "PATCH"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Destroy Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token\n}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{LocalUrl}}/api/category/8?_method=Delete",
+									"host": [
+										"{{LocalUrl}}"
+									],
+									"path": [
+										"api",
+										"category",
+										"8"
+									],
+									"query": [
+										{
+											"key": "_method",
+											"value": "Delete"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
 		}
 	],
 	"event": [
@@ -208,7 +385,7 @@
 		},
 		{
 			"key": "Token\n",
-			"value": "md08jQhm1HfaTVGWI1XTOZfSOKFhL4sd5SwGd57c"
+			"value": "tjsgjd15SV6dfV9gv4ER7gwM1gCWlmlvPlUKnujB"
 		}
 	]
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+ 
 use App\Models\Role;
 use App\Models\Permission;
 use App\Models\User;
@@ -53,6 +54,22 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $user->attachRole($userRole);
+
+        ///////////////////////////////////////
+
+        $this->call(CategorySeeder::class);
+
+        //////////////////////////////////////
+
+        $this->call(ArticleSeeder::class);
+
+        //////////////////////////////////////
+        
+        $this->call(CommentSeeder::class);
+
+        //////////////////////////////////////
+
+        
 
     }
 }
